@@ -168,8 +168,8 @@ body {
 /* صورة القسم الرئيسية بالبطاقات */
 
 .category-image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     
     margin-top: -58px;
     margin-right: auto;
@@ -368,8 +368,8 @@ body {
 
 /* صورة القسم بتصميم دائري فخم ومميز داخل البانر */
 .hero-image-wrapper {
-    width: 105px;
-    height: 105px;
+    width: 120px;
+    height: 120px;
     flex-shrink: 0;
     padding: 4px;
 
@@ -377,8 +377,8 @@ body {
     border-radius: 50%;
     
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(245, 206, 139, 0.3);
+        0 4px 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 0, 0, 0.3);
 
     overflow: hidden;
 }
@@ -463,22 +463,21 @@ body {
 }
 
 .product-image {
-    width: 115px;
-    height: 115px;
+    width: 130px;
+    height: 130px;
     flex-shrink: 0;
 
     margin-top: -45px;
     margin-left: -12px;
     padding: 4px;
 
-    background: #6f4e37;
-    border: 4px solid #c8a27a;
+    border: 2px solid #c8a27a;
     border-radius: 50%;
     overflow: hidden;
 
     box-shadow: 
-        0 0 0 10px #08090d,
-        0 0 25px rgba(255, 190, 20, 0.2);
+        0 0 0 3px #08090d,
+        0 0 5px rgba(0, 0, 0, 0.2);
 
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -635,14 +634,14 @@ body {
     }
 
     .product-image {
-        width: 95px;
-        height: 95px;
+        width: 105px;
+        height: 105px;
         margin-top: -38px;
         margin-left: -8px;
         border-width: 3.5px;
         box-shadow: 
-            0 0 0 8px #08090d,
-            0 0 20px rgba(255, 190, 20, 0.2);
+            0 0 0 4px #08090d,
+            0 0 4px rgba(0, 0, 0, 0.2);
     }
 }
 /* واجهة الترحيب */
