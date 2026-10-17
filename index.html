@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2Z Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- البحث باليسار -->
+        <button class="header-icon" type="button" aria-label="بحث">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 5 5"></path>
+            </svg>
+        </button>
+
+        <!-- الشعار باليمين -->
+        <div class="header-brand" dir="rtl">
+            <div class="brand-name">
+                <span class="brand-arabic">Café</span>
+                <div class="brand-logo">
+                    <span class="brand-a2z">A2Z</span>
+                </div>
+            </div>
+            <div class="brand-line"></div>
+        </div>
+    </header>
+
+    <!-- الصفحة الأولى: شبكة الأقسام الرئيسية -->
+    <main class="menu-container" id="categories-view">
+
+        <!-- البطاقة الأولى -->
+        <article class="category-card">
+            <div class="category-image">
+                <img src="img/cofe33.jpeg" alt="القهوة الساخنة">
+            </div>
+
+            <div class="category-content">
+                <p class="category-subtitle">ROYAL GRILLS</p>
+                <h1>القهوة الساخنة</h1>
+
+                <div class="category-footer">
+                    <button type="button" data-category="coffee">اختار</button>
+
+                    <div class="category-price">
+                        <span>تبدأ الأسعار من</span>
+                        <strong>14.000 د.ع</strong>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- البطاقة الثانية -->
+        <article class="category-card">
+            <div class="category-image">
+                <img src="img/goos1.jpeg" alt="عصائر فريش">
+            </div>
+
+            <div class="category-content">
+                <p class="category-subtitle">FRESH JUICES</p>
+                <h1>عصائر فريش</h1>
+
+                <div class="category-footer">
+                    <button type="button" data-category="juices">اختار</button>
+
+                    <div class="category-price">
+                        <span>تبدأ الأسعار من</span>
+                        <strong>5.000 د.ع</strong>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- البطاقة الثالثة -->
+        <article class="category-card">
+            <div class="category-image">
+                <img src="img/crosson1.jpeg" alt="الحلويات">
+            </div>
+
+            <div class="category-content">
+                <p class="category-subtitle">SWEET DESSERTS</p>
+                <h1>الحلويات</h1>
+
+                <div class="category-footer">
+                    <button type="button" data-category="desserts">اختار</button>
+
+                    <div class="category-price">
+                        <span>تبدأ الأسعار من</span>
+                        <strong>5.000 د.ع</strong>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- البطاقة الرابعة -->
+        <article class="category-card">
+            <div class="category-image">
+                <img src="img/moheto.jpeg" alt="الموهيتو">
+            </div>
+
+            <div class="category-content">
+                <p class="category-subtitle">ROYAL GRILLS</p>
+                <h1>الموهيتو</h1>
+
+                <div class="category-footer">
+                    <button type="button" data-category="moheto">اختار</button>
+
+                    <div class="category-price">
+                        <span>تبدأ الأسعار من</span>
+                        <strong>14.000 د.ع</strong>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- الصفحة الثانية: عرض الآيتمات مع صورة القسم الكبيرة وزر الرجوع -->
+    <section id="products-view" hidden>
+        
+        <!-- هيدر القسم الجديد: صورة القسم الكبيرة والاسم وزر الرجوع -->
+        <div class="category-hero-header">
+            <button id="back-button" type="button">
+                &larr; رجوع للأقسام
+            </button>
+            
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <img id="hero-img" src="" alt="صورة القسم">
+                </div>
+                <h2 id="section-title"></h2>
+            </div>
+        </div>
+
+        <div id="products-container"></div>
+    </section>
+    <!-- واجهة الترحيب -->
+<div class="welcome-screen" id="welcome-screen">
+
+    <!-- فيديو الخلفية -->
+    <video class="welcome-video" autoplay muted loop playsinline>
+        <source src="img/vid.mp4" type="video/mp4">
+    </video>
+
+    <!-- طبقة تعتيم الفيديو -->
+    <div class="welcome-overlay"></div>
+
+    <!-- محتوى الترحيب -->
+    <div class="welcome-content">
+
+        <p class="welcome-subtitle">WELCOME TO A2Z</p>
+
+
+        <button class="enter-menu" id="enter-menu">
+            <span>اكتشف المينيو</span>
+        </button>
+
+        <p class="welcome-footer">ابتسم . ارتشف . كررها</p>
+
+    </div>
+
+</div>
+
+    <script src="ahmed.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,810 @@
+/* =========================
+   الإعدادات العامة
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    background: #08090d;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    padding: 30px 16px;
+}
+
+/* =========================
+   الهيدر الزجاجي العلوي
+========================= */
+
+.main-header {
+    position: fixed;
+    top: 5px;
+    left: 3%;
+    width: 94%;
+    min-height: 76px;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: rgba(30, 27, 23, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 226, 184, 0.35);
+    border-radius: 25px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    z-index: 1000;
+}
+
+/* أيقونة البحث */
+
+.header-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+
+    display: grid;
+    place-items: center;
+
+    color: #f5ce8b;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header-icon svg {
+    width: 29px;
+    height: 29px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* الشعار */
+
+.header-brand {
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    min-width: 0;
+}
+
+.brand-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-arabic {
+    color: #f5d4a0;
+    font-family: "Noto Naskh Arabic", Tahoma, serif;
+    font-size: clamp(15px, 2.5vw, 25px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+
+.brand-a2z {
+    color: #f5d4a0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 4vw, 43px);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(245, 206, 139, 0.2);
+}
+
+.brand-line {
+    width: 75%;
+    height: 2px;
+    margin-top: 3px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        to left,
+        transparent,
+        #eac184,
+        transparent
+    );
+}
+
+/* =========================
+   شبكة الأقسام الرئيسية
+========================= */
+
+.menu-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 115px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px 15px;
+}
+
+/* بطاقة القسم */
+
+.category-card {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+    padding: 20px 20px;
+    overflow: visible;
+
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(200, 162, 122, 0.20),
+            transparent 70%
+        ),
+        linear-gradient(145deg, #191a20, #0d0f15);
+
+    border: 1px solid #292c36;
+    border-radius: 32px;
+}
+
+/* صورة القسم الرئيسية بالبطاقات */
+
+.category-image {
+    width: 140px;
+    height: 140px;
+    
+    margin-top: -58px;
+    margin-right: auto;
+    margin-left: -12px;
+    padding: 4px;
+
+    background: #6f4e37;
+    border: 4px solid #c8a27a;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 
+        0 0 0 12px #08090d,
+        0 0 30px rgba(255, 190, 20, 0.2);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.35s ease;
+}
+
+.category-card:hover .category-image,
+.category-card:active .category-image {
+    transform: scale(1.12);
+}
+
+.category-card:hover .category-image img,
+.category-card:active .category-image img {
+    transform: scale(1.08);
+}
+
+/* عنوان القسم */
+
+.category-subtitle {
+    margin-top: 10px;
+
+    color: #58565a;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.category-content h1 {
+    margin-top: 6px;
+
+    color: #f3e8d5;
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+/* أسفل البطاقة */
+
+.category-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px solid #292c35;
+}
+
+.category-footer button {
+    padding: 12px 15px;
+
+    background: #191a20;
+    color: #dce0e9;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.category-footer button:hover {
+    background: #444341;
+    transform: translateY(-3px);
+}
+
+.category-price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    text-align: left;
+}
+
+.category-price span {
+    color: #929bad;
+    font-size: 13px;
+}
+
+.category-price strong {
+    color: #dce0e9;
+    font-size: 18px;
+}
+
+/* =========================
+   صفحة المنتجات (البانر الزجاجي الذهبي الفاخر VIP Banner)
+========================= */
+
+#products-view {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 105px;
+    animation: fadeInPage 0.4s ease;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-hero-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+/* زر الرجوع  */
+#back-button {
+    align-self: flex-start;
+    padding: 9px 18px;
+    background: linear-gradient(145deg, #191a20, #0d0f15);
+    color: #f3e8d5;
+    border: 1px solid rgba(200, 162, 122, 0.4);
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#back-button:hover {
+    background: #292c36;
+    border-color: #f5ce8b;
+    transform: translateX(4px);
+}
+
+/* بانر الهيدر الفاخر (Gradient Glass Banner) */
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 28px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(245, 206, 139, 0.18),
+            transparent 60%
+        ),
+        linear-gradient(135deg, rgba(30, 27, 23, 0.7), rgba(13, 15, 21, 0.95));
+    
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(200, 162, 122, 0.35);
+    border-radius: 32px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    
+    overflow: hidden;
+}
+
+/* خط ضوئي جمالي أعلى البانر */
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f5ce8b, transparent);
+}
+
+/* صورة القسم بتصميم دائري فخم ومميز داخل البانر */
+.hero-image-wrapper {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    padding: 4px;
+
+    background: linear-gradient(135deg, #f5ce8b, #c8a27a, #593d28);
+    border-radius: 50%;
+    
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(245, 206, 139, 0.3);
+
+    overflow: hidden;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.hero-content:hover .hero-image-wrapper img {
+    transform: scale(1.08);
+}
+
+/* عنوان القسم بتصميم جذاب وبارز */
+#section-title {
+    color: #f5d4a0;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* حاوية الآيتمات المستطيلة */
+#products-container {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+/* البطاقة المستطيلة للآيتم */
+.product-card {
+    position: relative;
+    width: 100%;
+    padding: 20px 26px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    
+    overflow: visible;
+
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(200, 162, 122, 0.20),
+            transparent 70%
+        ),
+        linear-gradient(145deg, #191a20, #0d0f15);
+
+    border: 1px solid #292c36;
+    border-radius: 28px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: rgba(200, 162, 122, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+}
+
+.product-info h3 {
+    color: #f3e8d5;
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.product-info .product-price {
+    color: #f5ce8b;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.product-image {
+    width: 115px;
+    height: 115px;
+    flex-shrink: 0;
+
+    margin-top: -45px;
+    margin-left: -12px;
+    padding: 4px;
+
+    background: #6f4e37;
+    border: 4px solid #c8a27a;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 
+        0 0 0 10px #08090d,
+        0 0 25px rgba(255, 190, 20, 0.2);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image,
+.product-card:active .product-image {
+    transform: scale(1.12);
+}
+
+.product-card:hover .product-image img,
+.product-card:active .product-image img {
+    transform: scale(1.08);
+}
+
+/* =========================
+   تنسيق الموبايل
+========================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .main-header {
+        top: 1px;
+        min-height: 64px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        gap: 8px;
+    }
+
+    .brand-name {
+        gap: 7px;
+    }
+
+    .brand-arabic {
+        font-size: 20px;
+    }
+
+    .brand-a2z {
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+
+    .header-icon {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+    }
+
+    .header-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .menu-container {
+        padding-top: 95px;
+        gap: 42px 12px;
+    }
+
+    .category-card {
+        padding: 15px 14px;
+        border-radius: 26px;
+    }
+
+    .category-image {
+        width: 110px;
+        height: 110px;
+        margin-top: -48px;
+        margin-left: -10px;
+        border-width: 4px;
+        box-shadow: 
+            0 0 0 9px #08090d,
+            0 0 25px rgba(255, 190, 20, 0.2);
+    }
+
+    .category-subtitle {
+        margin-top: 8px;
+        font-size: 11px;
+    }
+
+    .category-content h1 {
+        margin-top: 4px;
+        font-size: 21px;
+    }
+
+    .category-footer {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+
+    .category-footer button {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+
+    .category-price strong {
+        font-size: 15px;
+    }
+
+    /* صفحة الآيتمات للموبايل */
+    #products-view {
+        padding-top: 85px;
+    }
+
+    .category-hero-header {
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    #back-button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .hero-content {
+        padding: 16px 20px;
+        gap: 18px;
+        border-radius: 26px;
+    }
+
+    .hero-image-wrapper {
+        width: 82px;
+        height: 82px;
+    }
+
+    #section-title {
+        font-size: 23px;
+    }
+
+    #products-container {
+        gap: 32px;
+    }
+
+    .product-card {
+        padding: 16px 18px;
+        border-radius: 24px;
+    }
+
+    .product-info h3 {
+        font-size: 19px;
+    }
+
+    .product-info .product-price {
+        font-size: 16px;
+    }
+
+    .product-image {
+        width: 95px;
+        height: 95px;
+        margin-top: -38px;
+        margin-left: -8px;
+        border-width: 3.5px;
+        box-shadow: 
+            0 0 0 8px #08090d,
+            0 0 20px rgba(255, 190, 20, 0.2);
+    }
+}
+/* واجهة الترحيب */
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: #090807;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 0.8s ease,
+                visibility 0.8s ease;
+}
+
+/* فيديو الخلفية */
+.welcome-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* التعتيم والإضاءة الذهبية */
+.welcome-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(130, 83, 30, 0.12),
+            transparent 65%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.78)
+        );
+}
+
+/* النصوص والأزرار */
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 25px;
+    color: #fff8ed;
+}
+
+/* العبارة الصغيرة */
+.welcome-subtitle {
+    color: #d5ad70;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+/* العنوان الرئيسي */
+.welcome-content h1 {
+    font-size: clamp(30px, 6vw, 58px);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 15px;
+
+    text-shadow: 0 0 30px rgba(207, 158, 85, 0.2);
+}
+
+/* الوصف */
+.welcome-description {
+    color: #d5cec2;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0 0 35px;
+}
+
+/* زر الدخول */
+.enter-menu {
+    background: transparent;
+    color: #D5AD70;
+    border: 1px solid #D5AD70;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    min-width: 220px;
+    padding: 16px 25px;
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+/* تأثير مرور الماوس */
+.enter-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(207, 158, 85, 0.4);
+    background:#D5AD70 ;
+    color: #08090d;
+}
+
+.enter-arrow {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.enter-menu:hover .enter-arrow {
+    transform: translateX(-5px);
+}
+
+/* العبارة أسفل الزر */
+.welcome-footer {
+    margin-top: 45px;
+    color: #a99a83;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+/* إخفاء واجهة الترحيب */
+.welcome-screen.hide-welcome {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* تحسين العرض على الموبايل */
+@media (max-width: 600px) {
+    .welcome-content {
+        padding: 18px;
+    }
+
+    .welcome-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .welcome-description {
+        font-size: 14px;
+    }
+
+    .enter-menu {
+        min-width: 200px;
+    }
+}
